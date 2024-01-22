@@ -51,13 +51,14 @@ if (verifyPeerOff) {
 }
 
 String.prototype.hashCode = function hashCode() {
-  const len = this.length;
-  let ret = 0;
-  for (let i = 0; i < len; i++) {
-    ret = Math.trunc(31 * ret + this.charCodeAt(i));
-  }
-  return ret;
+  var h = 0, l = this.length, i = 0;
+  if ( l > 0 )
+    while (i < l)
+      h = (h << 5) - h + this.charCodeAt(i++) | 0;
+   return h;
 };
+
+
 String.prototype.format = function format(...args) {
   let text = this.toString();
 
