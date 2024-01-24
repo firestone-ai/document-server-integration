@@ -88,9 +88,13 @@
                                             <td valign="middle">
                                                 <span class="select-user">Language</span>
                                                 <img class="info info-tooltip" data-id="language" data-tooltip="Choose the language for ONLYOFFICE editors interface" src="images/info.svg" />
-                                                <select class="select-user collectable" name="lang" id="language">
+                                                <select class="select-user collectable" name="lang" id="language">                                                    
                                                     <% Object.keys(languages).forEach(key => { %>
-                                                        <option value="<%= key %>"><%= languages[key] %></option>
+                                                        <% if (key == "zh") { %>
+                                                            <option selected="selected" value="<%= key %>"><%= languages[key] %></option>        
+                                                        <% } else { %>
+                                                            <option value="<%= key %>"><%= languages[key] %></option>        
+                                                        <% } %>
                                                     <% }) %>
                                                 </select>
                                             </td>

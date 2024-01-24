@@ -44,7 +44,14 @@
         "goback": {
             "url": "<%- editor.backUrl %>"
         },
-        "submitForm": <%- editor.submitForm %>
+        "submitForm": <%- editor.submitForm %>,
+        "features": {
+            "spellcheck": {
+                "mode": false,
+                "change": false
+            }
+        },
+        "spellcheck": false
     },
     "embedded": {
         "embedUrl": "<%- file.uriUser %>",
